@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Projeto conversor de medidas 📏
 
 Conversor de medidas de massa, temperatura e comprimento feito com HTML, CSS e JavaScript. 
@@ -24,12 +23,3 @@ Ao digitar um valor no input, o valor é convertido ao mesmo tempo de uma unidad
 |Onça|Milha||
 ||Pé||
 ||Jarda||
-
-### Link:
-
-https://aridsm.github.io/conversor-de-medidas/
-
-![gif página inicial](https://github.com/aridsm/conversor-de-medidas/blob/main/page_conversor.gif)
-=======
-# conversor-de-medidas
->>>>>>> e4f7a8d32b8dd1a3669b2fd146965e53ceb59b11
