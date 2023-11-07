@@ -1,8 +1,7 @@
 import conversorFormulas from "./formula_conversoes.js";
 
-const comprimento = ['Nanômetro', 'Micrômetro', 'Milímetro', 'Centímetro', 'Metro', 'Quilômetro', 'Milha', 'Pé', 'Polegada', 'Jarda'];
-const temperatura = ['Kelvin', 'Fahrenheit', 'Celsius'];
-const massa = ['Micrograma', 'Miligrama', 'Grama', 'Quilograma', 'Tonelada', 'Libra', 'Onça'];
+const comprimento = ['Milímetro', 'Centímetro', 'Metro', 'Quilômetro', 'Pé', 'Polegada'];
+const massa = ['Miligrama', 'Grama', 'Quilograma', 'Libra', 'Onça'];
 
 const attributesToSet = {
     'tabindex': '0',
@@ -67,7 +66,7 @@ function checkMeasureContent(measureName) {
     if (measureName == 'Comprimento') {
         changeMeasureContent(comprimento, 'Centímetro', 'Metro')
     } else if (measureName == 'Massa') {
-        changeMeasureContent(massa, 'Grama', 'Quilograma')
+        changeMeasureContent(peso, 'Grama', 'Quilograma')
     } else if (measureName == 'Temperatura') {
         changeMeasureContent(temperatura, 'Celsius', 'Fahrenheit')
     }
