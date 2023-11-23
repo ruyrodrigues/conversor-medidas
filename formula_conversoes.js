@@ -98,7 +98,91 @@ const conversorFormulas = {
     "Quilograma": 0.0283495,
     "Libra": 0.0625
   }
+  ,
 
+  // Volume
+  "Metro Cúbico":
+  {
+    "Litro": 1000,
+    "Mililitro": 1e+6,
+    "Galão": 264.172,
+    "Quarto": 1056.69,
+  }
+  ,
+  "Litro":
+  {
+    "Metro Cúbico": 0.001,
+    "Mililitro": 1000,
+    "Galão": 0.264172,
+    "Quarto": 1.05669
+  }
+  ,
+  "Mililitro":
+  {
+    "Metro Cúbico": 1e-6,
+    "Litro": 0.001,
+    "Galão": 0.000264172,
+    "Quarto": 0.00105669
+  }
+  ,
+  "Galão":
+  {
+    "Metro Cúbico": 0.00378541,
+    "Litro": 3.78541,
+    "Mililitro": 3785.41,
+    "Quarto": 4
+  }
+  ,
+  "Quarto":
+  {
+    "Metro Cúbico": 0.000946353,
+    "Litro": 0.946353,
+    "Mililitro": 946.353,
+    "Galão": 0.25
+  }
+  ,
+
+  // Tempo
+  "Segundo":
+  {
+    "Minuto": 0.0166666667,
+    "Hora": 0.0002777778,
+    "Dia": 0.0000115741,
+    "Semana": 0.0000016534
+  }
+  ,
+  "Minuto":
+  {
+    "Segundo": 60,
+    "Hora": 0.0166667,
+    "Dia": 0.0006944444,
+    "Semana": 0.0000992063
+  }
+  ,
+  "Hora":
+  {
+    "Segundo": 3600,
+    "Minuto": 60,
+    "Dia": 0.0416666667,
+    "Semana": 0.0059523808
+  }
+  ,
+  "Dia":
+  {
+    "Segundo": 86400,
+    "Minuto": 1440,
+    "Hora": 24,
+    "Semana": 0.1428571389
+  }
+  ,
+  "Semana":
+  {
+    "Segundo": 604800,
+    "Minuto": 10080,
+    "Hora": 168,
+    "Dia": 7
+  }
+  ,
 }
 
 export default conversorFormulas

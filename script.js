@@ -2,6 +2,8 @@ import conversorFormulas from "./formula_conversoes.js";
 
 const comprimento = ['Milímetro', 'Centímetro', 'Metro', 'Quilômetro', 'Pé', 'Polegada'];
 const massa = ['Miligrama', 'Grama', 'Quilograma', 'Libra', 'Onça'];
+const volume = ['Metro Cúbico', 'Litro', 'Mililitro', 'Galão', 'Quarto'];
+const tempo = ['Segundo', 'Minuto', 'Hora', 'Dia', 'Semana'];
 
 const attributesToSet = {
     'tabindex': '0',
@@ -66,9 +68,11 @@ function checkMeasureContent(measureName) {
     if (measureName == 'Comprimento') {
         changeMeasureContent(comprimento, 'Centímetro', 'Metro')
     } else if (measureName == 'Massa') {
-        changeMeasureContent(peso, 'Grama', 'Quilograma')
-    } else if (measureName == 'Temperatura') {
-        changeMeasureContent(temperatura, 'Celsius', 'Fahrenheit')
+        changeMeasureContent(massa, 'Grama', 'Quilograma')
+    } else if (measureName == 'Tempo') {
+        changeMeasureContent(tempo, 'Segundo', 'Minuto')
+    } else if (measureName == 'Volume') {
+        changeMeasureContent(volume, 'Milimetro', 'Litro')
     }
 }
 
@@ -105,25 +109,23 @@ function changeMeasure(listItem) {
 }
 
 async function convertMeasure() {
-    const v = document.querySelector('input').value;
-    const measureUsed = document.querySelector('#btn-medida').innerText;
-    const fromValue = document.querySelector('#btn-from').innerText;
-    const toValue = document.querySelector('#btn-to').innerText;
+    const inputValue = parseFloat(document.querySelector('input').value);
+    const fromMeasure = document.querySelector('#btn-from').innerText;
+    const toMeasure = document.querySelector('#btn-to').innerText;
 
-
-    if (fromValue == toValue) {
-        result.innerText = v
-    } else if (v == '') {
-        result.innerText = 'Por favor, digite um valor'
+    if (fromMeasure === toMeasure) {
+        result.innerText = inputValue;
+    } else if (isNaN(inputValue)) {
+        result.innerText = 'Por favor, digite um valor válido';
     } else {
-        const conversorConst = conversorFormulas[fromValue][toValue];
-        if (measureUsed !== 'Temperatura') {
-            result.innerText = conversorConst * v;
-        } else {
-            result.innerHTML = eval(conversorConst.replace('input', v))
-        }
+        const conversionFactor = conversorFormulas[fromMeasure][toMeasure];
+        const resultValue = conversionFactor * inputValue;
+        result.innerText = formatResult(resultValue);
     }
+}
 
+function formatResult(value) {
+    return Math.round(value * 1e8) / 1e8;
 }
 
 function changePosition() {
